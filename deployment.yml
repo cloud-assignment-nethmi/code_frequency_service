@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code-frequency-service
+  labels:
+    app: code-frequency-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: code-frequency-service
+  template:
+    metadata:
+      labels:
+        app: code-frequency-service
+    spec:
+      containers:
+        - name: code-frequency-service
+          image: gcr.io/fabled-decker-407011/code-frequency-service:prod  # Replace with your Docker Hub image and tag
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "300m"
+              memory: "400Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
