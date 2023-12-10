@@ -2,7 +2,7 @@
 server:
   port: 8080
   servlet:
-    context-path: /api/v1/codefrequency-management-service
+    context-path: /api/v1/code-frequency-service
 
 github:
   codefrequency-detail-url: https://api.github.com/repos/EthicalML/awesome-production-machine-learning/stats/contributors
