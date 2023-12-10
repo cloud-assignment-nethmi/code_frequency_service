@@ -5,21 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-//mongodb saves classes as documents -- creates in this manner
-@Document(collection = "github_codefrequncies")
-public class GitHubCodeFrequency {
-
+public class Author {
     @Id
-    private String id;
+    private String login;
 
-    private int total;
-
-    private Author author;
 
 }

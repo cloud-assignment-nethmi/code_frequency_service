@@ -1,6 +1,7 @@
 package com.codefrequencyservice.codefrequencyservice.service;
 
 import com.codefrequencyservice.codefrequencyservice.dto.GitHubCodeFrequencyDto;
+import com.codefrequencyservice.codefrequencyservice.model.Author;
 import com.codefrequencyservice.codefrequencyservice.model.GitHubCodeFrequency;
 import com.codefrequencyservice.codefrequencyservice.repository.GitHubCodeFrequencyRepository;
 import com.codefrequencyservice.codefrequencyservice.service.external.GitHubExternalClient;
@@ -38,8 +39,10 @@ public class CodeFrequencyServiceImpl implements CodeFrequencyService {
     }
 
     private GitHubCodeFrequency generateGitHubCodeFrequencyObject(GitHubCodeFrequencyDto gitHubCodeFrequencyDto) {
+
         return GitHubCodeFrequency.builder()
                 .total(gitHubCodeFrequencyDto.getTotal())
+                .author(Author.builder().login(gitHubCodeFrequencyDto.getAuthorDto().getLogin()).build())
                 .build();
     }
 }

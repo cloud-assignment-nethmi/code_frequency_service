@@ -13,4 +13,6 @@ public class GitHubCodeFrequencyDto {
     @JsonProperty("total")
     private int total;
 
+    @JsonProperty("author")
+    private AuthorDto authorDto;
 }
