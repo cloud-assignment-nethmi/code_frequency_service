@@ -23,13 +23,13 @@ spec:
           readinessProbe:
             httpGet:
               port: 8080
-              path: /api/v1/ode-frequency-service/actuator/health
+              path: /api/v1/code-frequency-service/actuator/health
             initialDelaySeconds: 40
             periodSeconds: 10
           livenessProbe:
             httpGet:
               port: 8080
-              path: /api/v1/ode-frequency-service/actuator/health
+              path: /api/v1/code-frequency-service/actuator/health
             initialDelaySeconds: 40
             periodSeconds: 10
           resources:
